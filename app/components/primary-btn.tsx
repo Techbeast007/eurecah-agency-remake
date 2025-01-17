@@ -14,7 +14,7 @@ const PrimaryBtn = ({title} : {title ?: string}) => {
                 whileHover={{ borderColor: "#fff" }}
               >
                 <Link
-                  href="https://https://github.com/Techbeast007"
+                  href="https://github.com/Techbeast007"
                   target="_blanck"
                   className="flex items-center w-36 gap-x-2 h-6 overflow-hidden"
                 >
