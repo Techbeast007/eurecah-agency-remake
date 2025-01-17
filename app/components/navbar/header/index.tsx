@@ -90,7 +90,7 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
           <motion.div className="flex lg:hidden my-4" {...anim(opacity)}>
             <div className={styles.navItem}>
               <Link
-                href="https://zuksky.site"
+                href="https://github.com/Techbeast007"
                 target="_blanck"
                 className="flex items-center w-28 gap-x-2 h-6 justify-between overflow-hidden"
               >
