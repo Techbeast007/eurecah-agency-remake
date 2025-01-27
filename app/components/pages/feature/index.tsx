@@ -13,6 +13,7 @@ import image4 from "@/public/assets/asset 12.png";
 
 import Link from "next/link";
 import { MotionProps, motion  } from "framer-motion";
+import './pluscolor.css';
 
 const content = [
   {
@@ -112,8 +113,8 @@ const Featured = () => {
           {...container}
         >
           <div className="flex justify-between items-center mr-6 py-6 mx-4">
-            <Plus className="h-16 w-12" strokeWidth={0.8} />
-            <Plus className="h-16 w-12" strokeWidth={0.8} />
+            <Plus className={`h-16 w-12 ${styles.pluscolor}`} strokeWidth={0.8} />
+            <Plus className={`h-16 w-12 ${styles.pluscolor}`} strokeWidth={0.8} />
           </div>
           <div className="flex justify-center items-center h-[calc(100vh-4rem)] relative">
             <motion.div className="absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10 top-0  w-[80%] md:w-[500px] md:h-[500px]"

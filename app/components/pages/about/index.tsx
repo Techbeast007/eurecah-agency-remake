@@ -10,6 +10,7 @@ import PrimaryBtn from "../../primary-btn";
 import Image3 from "@/public/assets/asset 7.png";
 import Image1 from "@/public/assets/asset 5.png";
 import Image2 from "@/public/assets/asset 6.jpeg";
+import "./index.css"
 
 const imageClips = [
   {
@@ -88,7 +89,7 @@ const About = () => {
           <div className=" flex items-center justify-start  index">
             <div className="overflow-hidden flex" ref={indexContainer}>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-white font-bold lg:text-[150px] myappimp"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}
