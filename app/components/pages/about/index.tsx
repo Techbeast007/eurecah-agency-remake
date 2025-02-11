@@ -83,7 +83,7 @@ const About = () => {
   };
 
   return (
-    <div className="w-screen text-white h-full">
+    <div className="w-screen text-dark h-full">
       <div className="pt-[5vh] lg:pt-[15vh]">
         <div className="px-8 lg:px-16 grid-container1">
           <div className=" flex items-center justify-start  index">
@@ -98,7 +98,7 @@ const About = () => {
                 0
               </motion.span>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-dark font-bold lg:text-[150px]"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}

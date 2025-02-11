@@ -63,7 +63,7 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
   return (
     <div>
       <motion.div
-        className="h-screen w-screen fixed top-0 left-0 bg-black -z-10"
+        className="h-screen w-screen fixed top-0 left-0 bg-white -z-10"
         {...anim(slide)}
       ></motion.div>
       <motion.div

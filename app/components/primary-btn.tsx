@@ -22,7 +22,7 @@ const PrimaryBtn = ({title} : {title ?: string}) => {
                     className="flex flex-col items-center h-full m-auto"
                     whileHover={{ y: -25 }}
                   >
-                    <span className="text-white text-xs lg:text-sm lg:font-base uppercase">
+                    <span className="text-dark text-xs lg:text-sm lg:font-base uppercase">
                       {title ? title : 'GET IN TOUCH'} 
                     </span>
                     <span className="text-white text-xs lg:text-sm lg:font-base mt-2 uppercase">

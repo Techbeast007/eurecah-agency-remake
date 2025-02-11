@@ -64,7 +64,7 @@ export default function Home() {
               <div className="w-screen h-screen sticky top-0 left-0">
                 <Hero />
               </div>
-              <div className="w-screen h-full bg-black sticky top-0 left-0">
+              <div className="w-screen h-full bg-white sticky top-0 left-0">
                 <About />
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Home() {
               <Featured2 />
             </div>
 
-            <div className="w-screen h-full bg-black">
+            <div className="w-screen h-full bg-white">
               <Team />
             </div>
           </motion.main>

@@ -78,7 +78,7 @@ const About2 = () => {
   };
 
   return (
-    <div className="w-screen text-white h-full bg-black">
+    <div className="w-screen text-dark h-full bg-white">
       <div className="pt-[5vh] lg:pt-[5vh]">
         <div className="px-8 lg:px-16 grid-container2">
           <div className=" flex items-center justify-start  index2">
@@ -87,7 +87,7 @@ const About2 = () => {
             </span>
             <div className="overflow-hidden flex" ref={indexContainer}>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-dark font-bold lg:text-[150px]"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}
@@ -96,7 +96,7 @@ const About2 = () => {
                 0
               </motion.span>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-dark font-bold lg:text-[150px]"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}

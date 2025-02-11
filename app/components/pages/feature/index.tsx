@@ -74,10 +74,10 @@ const Featured = () => {
 
   const container:MotionProps = {
     variants : {
-      hidden : { backgroundColor : "#000" },
-      visible : { backgroundColor : "#101010" },
-      slideStart : { backgroundColor : "#000" },
-      slideEnd : { backgroundColor : "#101010" },
+      hidden : { backgroundColor : "#fff" },
+      visible : { backgroundColor : "#fff" },
+      slideStart : { backgroundColor : "#fff" },
+      slideEnd : { backgroundColor : "#fff" },
     },
     initial: ["hidden", "slideStart"],
     whileInView: ["visible", "slideEnd"],
@@ -108,7 +108,7 @@ const Featured = () => {
     <main className={styles.main}>
       {content.map((item, index) => (
         <motion.div
-          className="bg-[#101010] h-screen w-screen text-white sticky top-0"
+          className="bg-[#fff] h-screen w-screen text-dark sticky top-0"
           key={index}
           {...container}
         >

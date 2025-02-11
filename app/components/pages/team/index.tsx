@@ -83,13 +83,13 @@ const Team = () => {
   };
 
   return (
-    <div id="community" className="w-screen text-white h-full relative">
+    <div id="community" className="w-screen text-dark h-full relative">
       <div className="pt-[5vh] lg:pt-[15vh]">
         <div className="px-8 lg:px-16 grid-container1">
           <div className=" flex items-center justify-start  index">
             <div className="overflow-hidden flex" ref={indexContainer}>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-dark font-bold lg:text-[150px]"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}
@@ -98,7 +98,7 @@ const Team = () => {
                 0
               </motion.span>
               <motion.span
-                className="text-7xl text-white font-bold lg:text-[150px]"
+                className="text-7xl text-black font-bold lg:text-[150px]"
                 variants={roll}
                 initial="initial"
                 animate={isIndexInView ? "enter" : "exit"}
@@ -107,14 +107,14 @@ const Team = () => {
                 3
               </motion.span>
             </div>
-            <span className="text-7xl text-white lg:text-9xl">
+            <span className="text-7xl text-black lg:text-9xl">
               <Minus size={48} />
             </span>
           </div>
 
           <div className="h-full lg:block content" ref={paraContainer}>
             <div className="mt-12">
-              <p className="font-medium text-xs uppercase opacity-60 text-white lg:text-base">
+              <p className="font-medium text-xs uppercase opacity-60 text-black lg:text-base">
                 [TEAM]
               </p>
             </div>
