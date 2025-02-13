@@ -11,7 +11,7 @@
   width: 36px;
   height: 36px;
   border-radius: 100%;
-  border: 1px solid #fafafa42;
+  border: 1px solid black;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
   z-index: 100;
 
   &:hover{
-      border: 1px solid #fafafa;
+      border: 1px solid black;
   }
 }
 
@@ -31,7 +31,7 @@
       height: 1px;
       width: 40%;
       margin: auto;
-      background-color: white;
+      background-color: black;
       position: relative;
       transition: transform 0.3s;
   }

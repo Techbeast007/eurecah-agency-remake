@@ -1,0 +1,5 @@
+.hero{
+    max-height: 700px;
+    background-image: url("https://lewhunt.github.io/divz/demo4/bg.jpg");
+    background-size: cover;
+}
