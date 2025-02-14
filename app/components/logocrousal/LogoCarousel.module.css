@@ -1,0 +1,78 @@
+.carouselContainer {
+    overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+  
+  /* Create fading effect on left & right sides */
+  .carouselContainer::before,
+  .carouselContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px; /* Adjust width of fade */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .carouselContainer::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(213, 210, 209), rgba(246, 104, 60, 0));
+  }
+  
+  .carouselContainer::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(157, 157, 157), rgba(98, 27, 6, 0));
+  }
+  
+  .logoTrack {
+    display: flex;
+    gap: 20px;
+    animation: scrollLeft 30s linear infinite;
+  }
+  
+  .reverse {
+    animation: scrollRight 30s linear infinite;
+  }
+  
+  .logoCard {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Left to Right */
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  
+  /* Right to Left */
+  @keyframes scrollRight {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .logoTrack {
+      animation-duration: 20s;
+    }
+  
+    .logoCard {
+      min-width: 100px;
+      height: 60px;
+    }
+  }
+  
