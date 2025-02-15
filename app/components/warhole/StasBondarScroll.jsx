@@ -12,9 +12,13 @@ const StasBondarEffect = () => {
   const imagesRef = useRef([]);
 
   useEffect(() => {
+    const container = containerRef.current;
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
+        trigger: container,
         start: 'top bottom',
         end: 'bottom top',
         scrub: 2, // Slower merging effect
@@ -23,8 +27,8 @@ const StasBondarEffect = () => {
 
     imagesRef.current.forEach((image, index) => {
       gsap.to(image, {
-        x: gsap.utils.random(-500, 500), // Random dispersion in x direction
-        y: gsap.utils.random(-500, 500), // Random dispersion in y direction
+        x: gsap.utils.random(-containerWidth / 2, containerWidth / 2), // Spread images across full width
+        y: gsap.utils.random(-containerHeight / 2, containerHeight / 2), // Spread across full height
         scale: () => gsap.utils.random(0.8, 1.4), // Subtle scaling
         duration: 3, // Slower transition
         ease: 'power2.out',
@@ -40,7 +44,7 @@ const StasBondarEffect = () => {
 
   return (
     <div ref={containerRef} className="relative w-full h-[100vh] overflow-hidden bg-white flex flex-wrap items-center justify-center">
-      {[...Array(10)].map((_, index) => (
+      {[...Array(18)].map((_, index) => (
         <img
           key={index}
           ref={(el) => (imagesRef.current[index] = el)}
