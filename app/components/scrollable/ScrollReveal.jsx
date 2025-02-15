@@ -22,11 +22,11 @@ export default function ScrollReveal() {
       if (!containerRef.current) return;
       const bounding = containerRef.current.getBoundingClientRect();
       if (bounding.top > window.innerHeight * 0.3 || bounding.bottom < window.innerHeight * 0.7) return;
-
+      
       if (currentIndex === 0 && e.deltaY < 0) return;
       if (currentIndex === elements.length - 1 && e.deltaY > 0) return;
-
-      e.preventDefault(); // Prevents default page scrolling when inside the component
+      
+      e.preventDefault(); // Prevent page scrolling only when inside the component
       if (isAnimating) return;
       setIsAnimating(true);
 
@@ -35,8 +35,8 @@ export default function ScrollReveal() {
       } else {
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
       }
-
-      setTimeout(() => setIsAnimating(false), 1000);
+      
+      setTimeout(() => setIsAnimating(false), 1000); // Ensure smooth transition
     };
 
     const handleTouchStart = (e) => {
@@ -48,17 +48,14 @@ export default function ScrollReveal() {
       const swipeDistance = touchEndY.current - touchStartY.current;
 
       if (Math.abs(swipeDistance) > 50) { // Minimum swipe threshold
-        if (swipeDistance < 0) {
-          // Swipe up (next image)
-          setCurrentIndex((prev) => (prev < elements.length - 1 ? prev + 1 : prev));
-        } else {
-          // Swipe down (previous image)
-          setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+        if (swipeDistance < 0 && currentIndex < elements.length - 1) {
+          setCurrentIndex((prev) => prev + 1);
+        } else if (swipeDistance > 0 && currentIndex > 0) {
+          setCurrentIndex((prev) => prev - 1);
         }
       }
     };
 
-    // Attach both wheel and touch events
     containerRef.current.addEventListener('wheel', handleScroll, { passive: false });
     containerRef.current.addEventListener('touchstart', handleTouchStart, { passive: true });
     containerRef.current.addEventListener('touchend', handleTouchEnd, { passive: true });

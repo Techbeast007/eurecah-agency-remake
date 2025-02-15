@@ -14,19 +14,19 @@ import { MoveUpRight } from "lucide-react";
 const links = [
   {
     name: "WORK",
-    url: "#work",
+    url: "work",
   },
   {
     name: "ABOUT",
-    url: "#about",
+    url: "about",
   },
   {
     name: "COMMUNITY",
-    url: "#community",
+    url: "community",
   },
   {
     name: "CONTACT",
-    url: "#contact",
+    url: "contact",
   },
 ];
 

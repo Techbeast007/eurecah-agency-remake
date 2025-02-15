@@ -17,12 +17,13 @@ import StasBondarScroll from "../components/warhole/StasBondarScroll"
 export default function Work() {
   return (<>
     <Navbar/>
+    <ScratchReveal/>
     <Cursor />
     <ScrollReveal/>
 
     <LogoCarousal/>
     <BouncyTextEffect/>
-    <ScratchReveal/>
+
     <OceanCurrentSection/>
     <WarholTextAnimation/>
     <StasBondarScroll/>
