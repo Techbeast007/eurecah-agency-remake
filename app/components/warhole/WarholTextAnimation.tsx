@@ -13,7 +13,7 @@ const WarholTextAnimation = () => {
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1'];
 
     gsap.fromTo(
-      textRef.current.children,
+      textRef?.current.children,
       { opacity: 0, y: 50 },
       {
         opacity: 1,
