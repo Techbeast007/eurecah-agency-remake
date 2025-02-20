@@ -1,42 +1,40 @@
 "use client";
-import React, { use, useEffect, useRef, useState } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Minus } from "lucide-react";
-
 import PrimaryBtn from "../../primary-btn";
-
 import Image3 from "@/public/assets/asset 15.png";
 import Image1 from "@/public/assets/asset 13.png";
 import Image2 from "@/public/assets/asset 14.webp";
 
 const imageClips = [
-  {
-    image: Image1,
-    title: "uru sports",
-    text: "001",
-    index: 0,
-  },
-  {
-    image: Image2,
-    title: "pepsico",
-    text: "002",
-    index: 1,
-  },
-  {
-    image: Image3,
-    title: "era carbon",
-    text: "003",
-    index: 2,
-  },
+  { image: Image1, title: "uru sports", text: "001", index: 0 },
+  { image: Image2, title: "pepsico", text: "002", index: 1 },
+  { image: Image3, title: "era carbon", text: "003", index: 2 },
 ];
 
 const aboutUs = [
-  "Through strategic insight and creative prowess,",
-  "we craft unique brand identities, compelling",
-  "products, and immersive web experiences."  
+  "From travel to tech,RealityBox crafts cinematic",
+   "stories that captivate, engage, and convert.",
+
 ];
+
+const replaceWithChangingText = (text:any) => {
+  return text.split("RealityBox").flatMap((part:any, index:number, array:[]) =>
+    index < array.length - 1
+      ? [
+          part,
+          <motion.span
+            key={index}
+            className="text-orange-500 hover:underline"
+          >
+            RealityBox
+          </motion.span>
+        ]
+      : part
+  );
+};
 
 const About2 = () => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -48,41 +46,30 @@ const About2 = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const indexContainer = useRef<HTMLDivElement | null>(null);
-  const paraContainer = useRef<HTMLDivElement | null>(null);
-
+  const indexContainer = useRef(null);
+  const paraContainer = useRef(null);
 
   const isIndexInView = useInView(indexContainer);
   const isParaInView = useInView(paraContainer);
 
   const roll = {
-    initial: {
-      y: "100%",
-    },
-    enter: (i: number) => ({
+    initial: { y: "100%" },
+    enter: (i:any) => ({
       y: "0%",
-      transition: {
-        duration: 1,
-        ease: [0.76, 0, 0.24, 1],
-        delay: i * 0.3,
-      },
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i * 0.3 },
     }),
-    exit: (i: number) => ({
+    exit: (i:any) => ({
       y: "100%",
-      transition: {
-        duration: 1,
-        ease: [0.76, 0, 0.24, 1],
-        delay: i * 0.3,
-      },
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i * 0.3 },
     }),
   };
 
   return (
-    <div className="w-screen text-dark h-full bg-white">
-      <div className="pt-[5vh] lg:pt-[5vh]">
+    <div className="w-screen text-dark h-[200] bg-white">
+      <div className="pt-[1vh] lg:pt-[1vh]">
         <div className="px-8 lg:px-16 grid-container2">
-          <div className=" flex items-center justify-start  index2">
-          <span className="text-7xl text-white lg:text-9xl">
+          <div className="flex items-center justify-start index2">
+            <span className="text-7xl text-white lg:text-9xl">
               <Minus size={48} />
             </span>
             <div className="overflow-hidden flex" ref={indexContainer}>
@@ -109,29 +96,38 @@ const About2 = () => {
 
           <div className="h-full lg:block content2" ref={paraContainer}>
             <div className="mt-8">
-              <p className="font-medium text-xs uppercase opacity-60 text-white lg:text-base">
-                [method]
-              </p>
+              <p className="font-medium text-xs uppercase opacity-60 text-white lg:text-base">[method]</p>
             </div>
 
             <div className="mt-4">
               {aboutUs.map((about, index) => (
                 <div key={index} className="overflow-hidden flex">
                   <motion.p
-                    className="text-lg lg:text-5xl lg:leading-[1.3]"
+                    className="text-lg lg:text-5xl lg:leading-[1.3] mb-4"
                     variants={roll}
                     initial="initial"
                     animate={isParaInView ? "enter" : "exit"}
                     custom={index}
                   >
-                    {about}
+                    {replaceWithChangingText(about)}
                   </motion.p>
+
                 </div>
+                
               ))}
+
+<motion.p
+                    className="text-lg lg:text-5xl lg:leading-[1.3] mt-6 mb-4"
+                    variants={roll}
+                    initial="initial"
+                    animate={isParaInView ? "enter" : "exit"}
+                  >
+                    Crafting Stories. Capturing Impact. Converting Views.
+                  </motion.p>
             </div>
 
             <div className="my-12 md:mt-6 md:mb-2">
-              <PrimaryBtn  title={"view our work"}/>
+              <PrimaryBtn title={"view our work"} />
             </div>
           </div>
 
@@ -147,7 +143,6 @@ const About2 = () => {
               <div>
                 <p>{imageClips[imageIndex].title}</p>
               </div>
-
               <div>
                 <p>{imageClips[imageIndex].text}</p>
               </div>
@@ -155,8 +150,6 @@ const About2 = () => {
           </div>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 };

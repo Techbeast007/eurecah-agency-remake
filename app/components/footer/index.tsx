@@ -2,6 +2,7 @@ import React from 'react'
 
 import styles from './styles.module.scss';
 import PrimaryBtn from '../primary-btn';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -13,12 +14,13 @@ const Footer = () => {
           <div className='my-2 z-50'>
             <PrimaryBtn />
           </div>
-          <h1 className={styles.heading}>Eureach</h1>
+          
+          <Image src="/Logo@300x.png" width="500" height="500" alt="RealityBox Logo" style={{margin:"90px"}}/>
       </div>
 
       <div id="contact" className='flex items-center p-4 h-[5%]'>
         <p>
-          <span >© 2024 Eureach. All rights reserved.</span>
+          <span >© 2024 RealityBox. All rights reserved.</span>
         </p>
       </div>
     </div>  

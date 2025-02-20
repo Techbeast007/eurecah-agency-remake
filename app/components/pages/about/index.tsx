@@ -1,16 +1,15 @@
-"use client";
-import React, { use, useEffect, useRef, useState } from "react";
+'use client';
 
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Minus } from "lucide-react";
-
 import PrimaryBtn from "../../primary-btn";
-
 import Image3 from "@/public/assets/asset 7.png";
 import Image1 from "@/public/assets/asset 5.png";
 import Image2 from "@/public/assets/asset 6.jpeg";
-import "./index.css"
+import ChangingText from "./ChangeText";
+import "./index.css";
 
 const imageClips = [
   {
@@ -34,14 +33,27 @@ const imageClips = [
 ];
 
 const aboutUs = [
-  "Eurecah transcends the ordinary and instead,",
-  "expresses a unique voice. Our team of experts",
-  "in design, development, and marketing works",
-  "tirelessly to cut through the noise, delivering",
-  "work that transcends the ordinary, breaks",
-  "barriers, and stands out in the ever-evolving",
-  "digital landscape.",
+  "From breathtaking travel films to high-impact brand ads, RealityBox turns visions into cinematic magic.",
+  "We don’t just shoot videos—we craft stories that captivate, connect, and convert.",
+  "Ready to make your brand unforgettable? Let’s create something epic!",
+  " ",
+  "#YourStoryOurLens"
 ];
+
+const replaceWithChangingText = (text:any) => {
+
+  const keywords = ["RealityBox", "#YourStoryOurLens"];
+
+  return keywords.reduce((acc, keyword) => {
+    return acc.flatMap((part, i, arr) =>
+      typeof part === "string"
+        ? part.split(keyword).flatMap((subPart, j, subArr) => 
+            j < subArr.length - 1 ? [subPart, <ChangingText key={`${i}-${j}`} text={keyword} />] : subPart
+          )
+        : part
+    );
+  }, [text]);
+};
 
 const About = () => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -53,10 +65,8 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const indexContainer = useRef<HTMLDivElement | null>(null);
-  const paraContainer = useRef<HTMLDivElement | null>(null);
-
-
+  const indexContainer = useRef(null);
+  const paraContainer = useRef(null);
   const isIndexInView = useInView(indexContainer);
   const isParaInView = useInView(paraContainer);
 
@@ -64,7 +74,7 @@ const About = () => {
     initial: {
       y: "100%",
     },
-    enter: (i: number) => ({
+    enter: (i:any) => ({
       y: "0%",
       transition: {
         duration: 1,
@@ -72,7 +82,7 @@ const About = () => {
         delay: i * 0.3,
       },
     }),
-    exit: (i: number) => ({
+    exit: (i:any) => ({
       y: "100%",
       transition: {
         duration: 1,
@@ -86,7 +96,7 @@ const About = () => {
     <div className="w-screen text-dark h-full">
       <div className="pt-[5vh] lg:pt-[15vh]">
         <div className="px-8 lg:px-16 grid-container1">
-          <div className=" flex items-center justify-start  index">
+          <div className="flex items-center justify-start index">
             <div className="overflow-hidden flex" ref={indexContainer}>
               <motion.span
                 className="text-7xl text-white font-bold lg:text-[150px] myappimp"
@@ -123,13 +133,13 @@ const About = () => {
               {aboutUs.map((about, index) => (
                 <div key={index} className="overflow-hidden flex">
                   <motion.p
-                    className="text-lg lg:text-5xl lg:leading-[1.3]"
+                    className="text-lg lg:text-5xl lg:leading-[1.3] mb-4"
                     variants={roll}
                     initial="initial"
                     animate={isParaInView ? "enter" : "exit"}
                     custom={index}
                   >
-                    {about}
+                    {replaceWithChangingText(about)}
                   </motion.p>
                 </div>
               ))}
@@ -160,8 +170,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 };

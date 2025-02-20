@@ -34,13 +34,11 @@ const imageClips = [
 ];
 
 const aboutUs = [
-  "We're a bunch of creatives and tech experts.",
-  "From design to coding, we've got a mix that's",
-  "as diverse as us. With a small team in the US,",
-  "UK and Latin America, we're a group that",
-  "thrives on collaboration and a healthy dose of",
-  "fun. Expect lots of enthusiasm and attention to",
-  "detail when working with us.",
+  "RealityBox is a powerhouse of ",
+  "visual storytelling, crafting stunning travel films brand ads"," and documentaries that captivate and convert.",
+  "From tourism to tech,","we bring brands to life with cinematic precision.",
+  "Let’s turn your vision into a"," masterpiece—one frame at a time!",
+
 ];
 
 const Team = () => {
@@ -84,7 +82,7 @@ const Team = () => {
 
   return (
     <div id="community" className="w-screen text-dark h-full relative">
-      <div className="pt-[5vh] lg:pt-[15vh]">
+      <div className="pt-[4vh] lg:pt-[13vh]">
         <div className="px-8 lg:px-16 grid-container1">
           <div className=" flex items-center justify-start  index">
             <div className="overflow-hidden flex" ref={indexContainer}>

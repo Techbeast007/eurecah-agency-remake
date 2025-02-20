@@ -42,20 +42,20 @@ const Hero = () => {
       </div>
       <motion.div className="absolute left-0 w-screen h-[15vh] bottom-[15vh] lg:bottom-[35vh]">
         <motion.div className={styles.headingtext} {...anim(opacity)}>
-          <div className="text-xs flex absolute top-0 left-1/2 justify-between items-center w-[90%] h-4 py-2 mt-2 -translate-x-1/2 -translate-y-1/2">
+          <div className="text-xs flex absolute top-0 left-1/2 justify-center items-center w-[90%] h-4 py-2 mt-2 -translate-x-1/2 -translate-y-1/2">
             <div>
-              <p>[CREATIVE AGENCY]</p>
+              <p className={styles.paragraphstyle}>Your Vision, Our Lens—Let’s Make It Viral!</p>
             </div>
 
             <div className="flex gap-x-2">
-              <p>[USA]</p>
-              <p>[UK]</p>
+              {/* <p>[INDIA]</p> */}
+              {/* <p>[UK]</p> */}
             </div>
           </div>
             <motion.div className="uppercase w-full text-center lg:mt-2 overflow-hidden p-4 ">
               <h1 className={styles.heroline}>
-                {getChars("Silence")} {getChars("The")} {getChars("Noice")}
-              </h1> 
+                {getChars("Visuals")} {getChars("That")} {getChars("Speak")}
+              </h1>  
             </motion.div>
         </motion.div>
       </motion.div>

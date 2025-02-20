@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -71,7 +72,7 @@ const OceanCurrentSection = () => {
     <div ref={containerRef} className="relative w-full h-[50vh] overflow-hidden bg-white flex flex-col items-center justify-center">
       <div className="flex flex-col gap-8">
         {[...Array(7)].map((_, index) => (
-          <img
+          <Image
             key={index}
             ref={(el) => imagesRef.current[index] = el}
             src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/7500/Netflix_Logo_RGB-1024.png"

@@ -30,3 +30,17 @@
     font-weight: normal;
     src: local('HelveticaNeueUltraLight'), url('HelveticaNeueUltraLightv130.woff') format('woff');
     }
+
+    @font-face {
+        font-family: 'SportingGrotesque-Bold';
+        font-style: normal;
+        font-weight: Bold;
+        src: local('SportingGrotesque-Bold'), url('SportingGrotesque-Bold.otf') format('otf');
+        }
+
+    @font-face {
+        font-family: 'SportingGrotesque-Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('SportingGrotesque-Regular'), url('SportingGrotesque-Regular.otf') format('otf');
+        }
