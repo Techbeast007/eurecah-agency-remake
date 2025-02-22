@@ -13,20 +13,16 @@ import Cursor from "../components/coursour/Cursor"
 import OceanCurrentSection from "../components/oceaneffect/OceanCurrentSection"
 import WarholTextAnimation from "../components/warhole/WarholTextAnimation";
 import StasBondarScroll from "../components/warhole/StasBondarScroll"
+import Hoverable from "../components/hoverable/Hoverable"
 
 export default function Work() {
   return (<>
     <Navbar/>
     <ScratchReveal/>
-    <Cursor />
-    <ScrollReveal/>
+    <Hoverable/>
 
-    <LogoCarousal/>
-    <BouncyTextEffect/>
 
-    <OceanCurrentSection/>
-    <WarholTextAnimation/>
-    <StasBondarScroll/>
+
 
 
 

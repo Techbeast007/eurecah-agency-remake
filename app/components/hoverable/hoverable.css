@@ -1,0 +1,104 @@
+
+.imgd{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+
+}
+.h1s{
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 0.9;
+    font-family: 'SportingGrotesque-Bold';
+}
+.ps{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.sectiond{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.intro , .outro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+}
+.awards{
+    min-height: 100%;
+    height: max-content;
+
+}
+.awards p{
+    padding: 5px 20px;
+
+}
+.awards-list{
+    border-top: 1px solid black;
+}
+
+.award{
+    height: 80px;
+    clip-path: polygon(0 0,100% 0, 100% 100%,0 100%);
+}
+
+.award-wrapper {
+    position: relative;
+    height: 240px;
+    will-change: transform;
+    transform: translateY(0); /* Set it to 0 instead of -160px */
+    opacity: 1; /* Ensure it's visible */
+}
+
+.award-name, .award-project{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+
+}
+.award-name{
+    background-color: white;
+    color: black;
+
+}
+.award-project{
+    background-color: black;
+    color: #e3e3db;
+}
+.awards-preview {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 250px;  /* Give it a defined width */
+    height: 250px; /* Give it a defined height */
+    z-index: 1000;
+    overflow: hidden; /* Prevent overflow */
+    border-radius: 10px; /* Optional: smooth edges */
+}
+
+.imgd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    border-radius: 10px; /* Optional: match the container */
+}
+
