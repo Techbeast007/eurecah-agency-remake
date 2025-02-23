@@ -14,11 +14,13 @@ import OceanCurrentSection from "../components/oceaneffect/OceanCurrentSection"
 import WarholTextAnimation from "../components/warhole/WarholTextAnimation";
 import StasBondarScroll from "../components/warhole/StasBondarScroll"
 import Hoverable from "../components/hoverable/Hoverable"
+import VerticalTabs from "../components/verticaltabs/VerticalTabs"
 
 export default function Work() {
   return (<>
     <Navbar/>
     <ScratchReveal/>
+    <VerticalTabs/>
     <Hoverable/>
 
 

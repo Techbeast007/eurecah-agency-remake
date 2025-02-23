@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.33",
+    "animejs": "^3.2.2",
     "divz": "^1.1.11",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.7",

@@ -1,42 +1,25 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
-export default function ScratchReveal() {
+export default function ScratchReveal({ firstWord = 'OUR', secondWord = 'WORK' }) {
   const canvasRef = useRef(null);
-  const ctxRef = useRef(null);
+  const headingWrapperRef = useRef(null);
+  const headingRef = useRef(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    ctxRef.current = ctx;
 
-    // Set canvas size dynamically
+    // Set canvas size
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    // Fill with black overlay
-    ctx.fillStyle = 'black';
+    // Fill with white overlay (scratchable)
+    ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Auto-reveal effect for mobile
-    if (isMobile) {
-      let alpha = 1.0; // Opacity starts at 1 (fully black)
-      const revealSpeed = 0.005; // Adjust speed for smooth reveal
-
-      const autoReveal = () => {
-        if (alpha > 0) {
-          alpha -= revealSpeed;
-          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the previous frame
-          ctx.globalAlpha = alpha;
-          ctx.fillRect(0, 0, canvas.width, canvas.height); // Redraw fading overlay
-          requestAnimationFrame(autoReveal);
-        }
-      };
-
-      requestAnimationFrame(autoReveal);
-    }
 
     // Scratch effect for desktop
     const handleMouseMove = (e) => {
@@ -54,6 +37,27 @@ export default function ScratchReveal() {
       canvas.addEventListener('mousemove', handleMouseMove);
     }
 
+    // GSAP Letter Animation (Characters Appear One by One)
+    gsap.fromTo(
+      headingRef.current.querySelectorAll('.letter'),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power3.out',
+        stagger: 0.08, // Stagger effect for each letter
+        delay: 0.3,
+      }
+    );
+
+    // Animate white box appearance
+    gsap.fromTo(
+      headingWrapperRef.current,
+      { opacity: 0, scale: 0.8 },
+      { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out', delay: 0.2 }
+    );
+
     return () => {
       if (!isMobile) {
         canvas.removeEventListener('mousemove', handleMouseMove);
@@ -66,12 +70,52 @@ export default function ScratchReveal() {
       {/* Background Video */}
       <video src="/13112746_4096_2160_60fps.mp4" autoPlay loop muted className="absolute w-full h-full object-cover" />
 
-      {/* Scratch Effect Canvas */}
+      {/* Scratch Effect Canvas (Only White Overlay) */}
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full cursor-pointer" />
 
-      {/* Overlay Text (Optional) */}
-      <div className="absolute text-white text-4xl font-bold">
-        Your Text Here
+      {/* White Background Box for Heading */}
+      <div
+        ref={headingWrapperRef}
+        className="absolute bottom-10 left-10 bg-white px-8 py-4"
+        style={{ display: 'inline-block' }}
+      >
+        {/* Animated Heading */}
+        <div ref={headingRef} className="flex flex-col leading-none">
+          <div className="flex">
+            {firstWord.split('').map((char, index) => (
+              <span
+                key={index}
+                className="letter"
+                style={{
+                  fontSize: '8em',
+                  fontWeight: '900',
+                  fontFamily: 'SportingGrotesque-Bold',
+                  color: 'black',
+                  display: 'inline-block',
+                }}
+              >
+                {char}
+              </span>
+            ))}
+          </div>
+          <div className="flex">
+            {secondWord.split('').map((char, index) => (
+              <span
+                key={index}
+                className="letter"
+                style={{
+                  fontSize: '8em',
+                  fontWeight: '900',
+                  fontFamily: 'SportingGrotesque-Bold',
+                  color: 'black',
+                  display: 'inline-block',
+                }}
+              >
+                {char}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
