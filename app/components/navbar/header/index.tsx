@@ -35,7 +35,7 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
   const hover:MotionProps = {
     variants : {
       initial : { y : 0},
-      hover : { y : "-75%"},
+      hover : { y : "-5%"},
     },
     initial : "initial",
     whileHover : "hover",
@@ -74,14 +74,14 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
           {links.map((link, index) => {
             const { name, url } = link;
             return (
-              <Link href={url} key={index} className="overflow-hidden pb-4 my-4">
+              <Link href={url} key={index} className="overflow-hidden pb-3 my-4">
                 <motion.div className= "inline-block" {...hover}>
                   <motion.p className={styles.item} onClick={() => toggleNav()} >
                     {getChars(name)}
                   </motion.p>
-                  <motion.p className={styles.item} onClick={() => toggleNav()}>
+                  {/* <motion.p className={styles.item} onClick={() => toggleNav()}>
                     {getChars(name)}
-                  </motion.p>
+                  </motion.p> */}
                 </motion.div>
               </Link>
             );

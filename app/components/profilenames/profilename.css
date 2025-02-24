@@ -1,0 +1,42 @@
+.containers{
+    /* background: #b2b2a8; */
+    height: 100vh;
+    padding: 2em;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.hr{
+    height: 1px;
+    width: 100%;
+    background-color: #3e3b36;
+}
+
+.reveal{
+    width: 500px;
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.reveal div{
+    position: absolute;
+    line-height: 1.8em;
+
+}
+
+.h1{
+    font-size: 6.4em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+
+}
+.h1 span{
+    /* font-style: italic; */
+    /* font-family: "Neue Montreal"; */
+}

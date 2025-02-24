@@ -5,6 +5,7 @@ import Logo from "../logo/logo";
 import styles from "./styles.module.scss";
 import Header from "./header";
 import PrimaryBtn from "../primary-btn";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -34,7 +35,11 @@ const Navbar = () => {
 
       <div className="w-[95%] m-auto p-4 flex justify-between items-center h-[10vh]">
         <div className="logo">
+          <Link href={"/"}>
           <Logo />
+            
+          </Link>
+      
         </div>
 
         <div className="nav-right flex items-center justify-between gap-x-4">
