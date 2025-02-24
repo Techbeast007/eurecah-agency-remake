@@ -1,0 +1,117 @@
+.lenis.lenis-smooth[data-lenis-prevent]{
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped{
+    overflow:clip;
+}
+
+.lenis.lenis-smooth iframe{
+    pointer-events:none;
+}
+
+.img3{
+    width: 100%;
+    font-size: 12vw;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+p{
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sticky{
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.gallery-wrapper{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 160vw;
+    height: 100vh;
+    display: flex;
+    gap: 4em;
+
+}
+
+col{
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+
+}
+
+.img3 {
+    flex: 1;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.img3.main img{
+    position: relative;
+    transform: scale(2);
+    will-change: transform;
+}
+
+.containers3{
+    width: 100%;
+    height: 100%;
+}
+
+.section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e1dedc;
+    padding: 2em;
+}
+
+.hero{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+
+
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+}

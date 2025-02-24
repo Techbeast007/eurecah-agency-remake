@@ -21,6 +21,10 @@ const links = [
     url: "about",
   },
   {
+    name: "SERVICES",
+    url: "services",
+  },
+  {
     name: "COMMUNITY",
     url: "community",
   },

@@ -15,6 +15,8 @@ import Featured2 from "./components/pages/featured2";
 import Team from "./components/pages/team";
 import Footer from "./components/footer";
 import Loading from "./loading";
+import FluidCursor from "./components/FluidCursor";
+
 
 export default function Home() {
   const [dimensions, setDimensions] = useState({width:0, height: 0});
@@ -95,7 +97,9 @@ export default function Home() {
           <div className="h-screen w-screen fixed bottom-0 z-0">
             <Footer />
           </div>
+          <FluidCursor/>
         </div>
+        
       )}
     </AnimatePresence>
     </LayoutGroup>

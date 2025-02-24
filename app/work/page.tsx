@@ -15,6 +15,7 @@ import WarholTextAnimation from "../components/warhole/WarholTextAnimation";
 import StasBondarScroll from "../components/warhole/StasBondarScroll"
 import Hoverable from "../components/hoverable/Hoverable"
 import VerticalTabs from "../components/verticaltabs/VerticalTabs"
+import FluidCursor from "../components/FluidCursor";
 
 export default function Work() {
   return (<>
@@ -22,6 +23,7 @@ export default function Work() {
     <ScratchReveal/>
     <VerticalTabs/>
     <Hoverable/>
+    <FluidCursor/>
 
 
 

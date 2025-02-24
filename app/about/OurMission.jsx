@@ -57,9 +57,9 @@ export default function OurMission() {
   return (
     <div className="mission-container">
       <div className="left">
-        <h2>Our Heading</h2>
-        <p>Better than Brand</p>
-        <p>Description needed</p>
+        <h2>Our Vision</h2>
+        <p>Better than BrandBetter than BrandBetter than BrandBetter than<br/> BrandBetter than BrandBetter than BrandBetter than BrandBetter than BrandBetter than Brand</p>
+        <p>Description neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription needed</p>
         <a href="#" className="btn">Contact Us</a>
       </div>
       <div className="right">
@@ -69,6 +69,8 @@ export default function OurMission() {
           <div className="img img3"></div>
           <div className="img img4"></div>
         </div>
+        <p>Better than BrandBetter than BrandBetter than BrandBetter than<br/> BrandBetter than BrandBetter than BrandBetter than BrandBetter than BrandBetter than Brand</p>
+        <p>Description neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription neededDescription needed</p>
         <h1 className="ml12">OUR MISSION</h1>
       </div>
     </div>

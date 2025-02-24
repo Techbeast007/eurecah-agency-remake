@@ -36,7 +36,73 @@
     letter-spacing: -0.02em;
 
 }
-.h1 span{
-    /* font-style: italic; */
-    /* font-family: "Neue Montreal"; */
+
+
+.secondary{
+     font-family: "Neue Montreal";
+
+}
+
+.p{
+    padding: 0.8em 0;
+    font-family: "Neue Montreal";
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+.white-space{
+    width: 100%;
+    height: 120px;
+
+}
+.nav-item{
+    width: 240px;
+    border-radius: 0 0 40px 0;
+    margin: 0.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.nav-item >div{
+    padding: 1em;
+    font-family: 'Neue Montreal';
+    font-size: 14px;
+
+}
+
+.about{
+    background: #fcefdf;
+}
+
+.projects{
+    background: #db4c44;
+}
+
+.projects >div{
+    color: #fff;
+}
+
+.contact{
+background: #e7a92b;
+}
+
+.contact >div{
+    color: #fff;
+}
+
+.id{
+    margin-right: 0.8em;
+}
+
+@media (max-width:900px){
+    .h1{
+        font-size: 2em;
+
+    }
+    .p{
+        font-size: 8px;
+    }
+
 }

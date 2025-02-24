@@ -6,6 +6,7 @@ import CardCarousal from './CardCarousal'
 import OurMission from './OurMission'
 import Navbar from '../components/navbar/navbar'
 import ProfileName from  '../components/profilenames/ProfileName'
+import FluidCursor from '../components/FluidCursor'
 
 export default function About() {
   return (
@@ -27,6 +28,7 @@ export default function About() {
       />
 
       <ProfileName/>
+      <FluidCursor/>
       </div>
       </>
 

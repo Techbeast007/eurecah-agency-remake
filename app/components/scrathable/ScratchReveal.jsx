@@ -18,7 +18,18 @@ export default function ScratchReveal({ firstWord = 'OUR', secondWord = 'WORK' }
     canvas.height = canvas.offsetHeight;
 
     // Fill with white overlay (scratchable)
-    ctx.fillStyle = 'white';
+
+
+const img = new Image();
+img.src = "https://img.freepik.com/free-vector/pastel-gradient-soft-peach-blur-background-vector_53876-175402.jpg?t=st=1740388242~exp=1740391842~hmac=0198ada57ddfe00d3096a1b54e5f39027095c9b938ec151d42c07841a44e7c05&w=996"; // Replace with your image path
+
+img.onload = function () {
+  const pattern = ctx.createPattern(img, "repeat"); // "repeat", "no-repeat", "repeat-x", "repeat-y"
+  ctx.fillStyle = pattern;
+  ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
+};
+
+    
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Scratch effect for desktop
@@ -63,7 +74,7 @@ export default function ScratchReveal({ firstWord = 'OUR', secondWord = 'WORK' }
         canvas.removeEventListener('mousemove', handleMouseMove);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center">

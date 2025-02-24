@@ -1,14 +1,14 @@
 .mission-container {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
   position: relative;
 }
 
 .left {
   width: 50%;
-  background-image: url('https://tse1.mm.bing.net/th?id=OIP.O8Uc_OZ7JarbDmVOBkcE7QHaEK&pid=Api&rs=1&c=1&qlt=95&w=186&h=104');
+  background-image: url('https://img.freepik.com/free-photo/vibrant-cloudy-background_53876-90088.jpg?t=st=1740388024~exp=1740391624~hmac=0688773dbf3ea974033f0caaa688d30945568563db915e0a11c39559dc613517&w=2000');
   background-size: cover;
   background-position: center;
   flex-direction: column;
@@ -20,6 +20,23 @@
   transform: translateX(-190%);
   display: flex;
 
+}
+
+.left h2{
+  font-size: 5em;
+  font-weight: 900;
+  color: white;
+  font-family: 'HelveticaNeue Heavy';
+}
+.left p{
+  font-size: 1em;
+  font-weight: 800;
+  color: white;
+}
+.left p{
+  font-size: 1em;
+  font-weight: 800;
+  color: white;
 }
 
 .right {
@@ -38,6 +55,10 @@
 .ml12 {
   font-size: 2rem;
   opacity: 0;
+  font-size: 5em;
+  font-weight: 900;
+  color: white;
+  font-family: 'HelveticaNeue Heavy';
 }
 
 .images {
@@ -54,9 +75,16 @@
 }
 
 .img1, .img2, .img3, .img4 {
-  background-image: url("https://tse1.mm.bing.net/th?id=OIP.O8Uc_OZ7JarbDmVOBkcE7QHaEK&pid=Api&rs=1&c=1&qlt=95&w=186&h=104");
+  background-image: url("https://img.freepik.com/free-photo/long-exposure-pier_1401-393.jpg?t=st=1740383834~exp=1740387434~hmac=eb96881846f73b04f707a08829e9ecfa575fd36267dd95e88aa8c9caf6c1fb79&w=2000");
 }
 
-.left h2{
-  color: black;
+
+.btn{
+  border: white solid 1px;
+  padding: 8px 9px;
+  border-radius: 44px;
+  width: 175px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
