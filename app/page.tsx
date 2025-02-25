@@ -54,7 +54,7 @@ export default function Home() {
     <LayoutGroup >
       <AnimatePresence mode="wait">
       {loading ? (
-        dimensions.height > 0 && <Loading dimensions={dimensions}/> 
+        dimensions.height > 0 && <Loading/> 
       ) : (
         <div>
           <motion.main className="h-full z-20 relative" layout>
