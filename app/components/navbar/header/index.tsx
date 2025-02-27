@@ -74,7 +74,7 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
         {...anim(height)}
         className="flex w-screen flex-col min-h-[90vh] bg-transparent z-50"
       >
-        <div className="pt-20 px-4 lg:ps-12 flex flex-col h-[70vh] lg:h-[80vh]">
+        <div className="pt-20 px-4 lg:ps-12 flex flex-col h-[95vh] lg:h-[95vh]">
           {links.map((link, index) => {
             const { name, url } = link;
             return (
@@ -110,12 +110,12 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
           </motion.div>
         </div>
 
-        <div className="w-full flex flex-col h-[20vh] lg:h-[10vh] lg:flex-row lg:justify-between lg:items-center items-start gap-y-4  px-3 lg:px-10">
+        <div className="w-full flex flex-col h-[40vh] lg:h-[10vh] lg:flex-row lg:justify-between lg:items-center items-start gap-y-4  px-3 lg:px-10">
           <motion.div
             className="text-white font-medium text-sm"
             {...anim(popOut)}
           >
-            <Link href={"/"}>HELLO@EURECAH.COM</Link>
+            <Link href={"/"}>Reality Box</Link>
           </motion.div>
 
           <div className="nav-icons flex gap-x-4">
