@@ -74,7 +74,7 @@ const Header = ({ toggleNav }: { toggleNav: () => void }) => {
         {...anim(height)}
         className="flex w-screen flex-col min-h-[90vh] bg-transparent z-50"
       >
-        <div className="pt-20 px-4 lg:ps-12 flex flex-col h-[95vh] lg:h-[95vh]">
+        <div className="pt-25 px-4 lg:ps-12 flex flex-col h-[95vh] lg:h-[90vh]">
           {links.map((link, index) => {
             const { name, url } = link;
             return (
