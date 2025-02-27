@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Navbar from "../components/navbar/navbar";
 import ScratchReveal from "../components/scrathable/ScratchReveal";
 import ServicePage from "../components/servicespage/ServicePage"
-import FluidCursor from "../components/FluidCursor";
+import FluidCursorCanvas from "../components/FluidCursor";
+import ServiceSlider from './ServiceSlider'
 
 
 const services = [
@@ -30,8 +31,8 @@ const Services = () => {
     <>
 <Navbar/>
 <ScratchReveal firstWord="Our" secondWord="Services"/>
-<ServicePage/>
-<FluidCursor/>
+<FluidCursorCanvas/>
+<ServiceSlider/>
 
     </>
   );

@@ -1,0 +1,29 @@
+.title{
+    font-weight: 900;
+    font-size: 4em;
+}
+
+.numbers{
+    font-weight: 900;
+    font-size: 4em;
+
+}
+.subtitle{
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: 10px;
+
+}
+
+.description{
+    font-size: 0.8em;
+}
+
+button {
+    will-change: transform;
+    transition: transform 0.2s ease-out;
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+  
