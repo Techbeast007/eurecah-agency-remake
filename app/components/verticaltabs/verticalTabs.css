@@ -1,80 +1,101 @@
 .tabs-container {
-    display: flex;
-    flex-direction: row; /* Align tabs horizontally */
-    width: 100%;
-    height: 70vh;
-    overflow: hidden;
-    background: #111;
+  display: flex;
+  flex-direction: row; /* Align tabs horizontally */
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  background: #111;
+}
+
+.tab {
+  flex: 1; /* Equal width for all tabs */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab:hover {
+  flex: 1.5; /* Expand smoothly on hover */
+}
+
+.tab-content {
+  position: absolute;
+  z-index: 2;
+  color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.tab-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tab-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.tab-number {
+  font-size: 8em;
+  font-weight: 900;
+  opacity: 1;
+  font-family: 'SportingGrotesque-Bold';
+}
+
+.tab-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease-in-out;
+}
+
+.tab:hover .tab-image {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+/* ✅ Mobile-specific styles */
+@media (max-width: 768px) {
+  .tabs-container {
+      flex-direction: column; /* ✅ Stack tabs vertically */
+      height: auto; /* ✅ Auto height to fit content */
   }
-  
+
   .tab {
-    flex: 1; /* Equal width for all tabs */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background: white;
-    cursor: pointer;
-    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    
+      flex: none; /* ✅ Disable flex expansion */
+      height: auto; /* ✅ Expand naturally based on content */
+      padding: 20px;
+      text-align: center;
   }
-  
-  .tab:last-child {
-    border-right: none;
-  }
-  
-  .tab:hover {
-    flex: 1.5; /* Expand smoothly on hover */
-  }
-  
-  .tab-content {
-    position: absolute;
-    z-index: 2;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    color:black;
-    justify-content: space-;
-  }
-  
-  .tab-heading {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0.8;
-  }
-  
-  .tab-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 10px 0;
-    text-transform: uppercase;
-  }
-  
-  .tab-number {
-    font-size: 8em;
-    font-weight: 900;
-    opacity: 1;
-    font-family: 'SportingGrotesque-Bold';
-  }
-  
+
   .tab-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease-in-out;
+      width: 100%; /* ✅ Make image full width */
+      height: auto; /* ✅ Maintain aspect ratio */
   }
-  
-  .tab:hover .tab-image {
-    transform: scale(1.5);
-    opacity: 1;
+
+  .tab-content {
+      position: static; /* ✅ Normal position (not absolute) */
+      padding: 20px 0;
   }
-  
+}

@@ -95,35 +95,36 @@ img.onload = function () {
           <div className="flex">
             {firstWord.split('').map((char, index) => (
               <span
-                key={index}
-                className="letter"
-                style={{
-                  fontSize: '8em',
-                  fontWeight: '900',
-                  fontFamily: 'SportingGrotesque-Bold',
-                  color: 'black',
-                  display: 'inline-block',
-                }}
-              >
-                {char}
-              </span>
+              key={index}
+              className="letter"
+              style={{
+                fontSize: 'clamp(3em, 6vw, 8em)', // 🛠️ Responsive: 4em (small) → 8em (large)
+                fontWeight: '900',
+                fontFamily: 'SportingGrotesque-Bold',
+                color: 'black',
+                display: 'inline-block',
+              }}
+            >
+              {char}
+            </span>
+            
             ))}
           </div>
           <div className="flex">
             {secondWord.split('').map((char, index) => (
-              <span
-                key={index}
-                className="letter"
-                style={{
-                  fontSize: '8em',
-                  fontWeight: '900',
-                  fontFamily: 'SportingGrotesque-Bold',
-                  color: 'black',
-                  display: 'inline-block',
-                }}
-              >
-                {char}
-              </span>
+                           <span
+                           key={index}
+                           className="letter"
+                           style={{
+                             fontSize: 'clamp(3em, 6vw, 8em)', // 🛠️ Responsive: 4em (small) → 8em (large)
+                             fontWeight: '900',
+                             fontFamily: 'SportingGrotesque-Bold',
+                             color: 'black',
+                             display: 'inline-block',
+                           }}
+                         >
+                           {char}
+                         </span>
             ))}
           </div>
         </div>
