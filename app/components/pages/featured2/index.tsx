@@ -53,7 +53,7 @@ const Featured2 = () => {
 
             <hr className="w-[90%] mx-auto opacity-40" />
             <div
-              className="w-[90%] h-[30vh] mx-auto flex items-center justify-center relative"
+              className="w-[90%]  h-[20vh] sm:h-[40vh] mx-auto flex items-center justify-center relative"
               onMouseMove={mouseMove}
             >
               <div className=" overflow-hidden">

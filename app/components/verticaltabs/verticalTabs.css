@@ -75,6 +75,20 @@
   opacity: 1;
 }
 
+
+.tab-description {
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab:hover .tab-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
   .tabs-container {
