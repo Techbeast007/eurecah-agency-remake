@@ -56,12 +56,9 @@ const Featured2 = () => {
               className="w-[90%] h-[30vh] mx-auto flex items-center justify-center relative"
               onMouseMove={mouseMove}
             >
-              <div className="h-1/2 overflow-hidden">
+              <div className=" overflow-hidden">
                 <motion.div>
                   <motion.p >{item.title}</motion.p>
-                  <motion.p  className="translate-y-1/2 hidden md:flex">
-                    {item.title}
-                  </motion.p>
                 </motion.div>
               </div>
 
